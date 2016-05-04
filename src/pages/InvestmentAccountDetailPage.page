@@ -1,0 +1,180 @@
+<!-- 
+    This page is used as view for Investment Account record.
+    This is divided in two sections:
+    1. Investment Account Inline Edit and Detail section: This is divided in two part:
+         a) Inline Edit and Detail
+         b) Related Lists for child's
+        
+    2. Rebalancing functionality
+
+ -->
+<apex:page standardController="Investment_Account__c"
+    extensions="InvestmentAccountDetailController" docType="html-5.0"
+    action="{!checkAndRedirectUser}">
+
+    <!-- This message will only be displayed if record id is not passed and directly revied the page  -->
+    <apex:pageMessages rendered="{!isErrorOnPage}" />
+
+    <!-- START - Main Panel -->
+    <apex:outputPanel id="mainPanel" rendered="{!!isErrorOnPage}">
+
+        <apex:form id="invForm">
+
+            <!-- This is the section header title which display Investment account name and icon  -->
+            <apex:sectionHeader title="{!Investment_Account__c.Name}" />
+
+            <!-- Start : Screen 1 (Section1 - a) -->
+            <apex:pageBlock title="{!$Label.INVESTMENT_ACCOUNT_DETAIL_TITLE}"
+                mode="inlineEdit">
+
+                <!-- Here all the message of page like exception, confirmation messages displayed  -->
+                <apex:pageMessages />
+
+                <apex:pageBlockSection columns="2">
+
+                    <apex:outputField value="{!invAccWrapper.invAcc.Name}">
+
+                    </apex:outputField>
+
+                    <apex:outputField value="{!invAccWrapper.invAcc.OwnerId}" />
+
+
+
+                    <apex:outputField value="{!invAccWrapper.invAcc.Cash_Reserve_Percent__c}" />
+
+
+                    <apex:pageBlockSectionItem helpText="{!$Label.Investment_Value_Help_Text}">
+                        <apex:outputLabel value="Investment Value"></apex:outputLabel>
+                        <apex:outputText value="{!invAccWrapper.investmentValue}" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.Investment_Account__c.fields.Cash_Value__c.inlineHelpText}">
+                        <apex:outputLabel value="Cash Value" />
+
+                        <!-- This is not displayed as output field as we are using inline editing  -->
+                        <apex:outputText value="{!ROUND(invAccWrapper.invAcc.Cash_Value__c, 2)}" />
+                    </apex:pageBlockSectionItem>
+
+
+
+                    <apex:pageBlockSectionItem helpText="{!$Label.Total_Account_Value_Help_Text}">
+                        
+                        <apex:outputLabel value="Total Account Value"></apex:outputLabel>
+                        <apex:outputText value="{!invAccWrapper.totalAccountValue}" />
+                    
+                    </apex:pageBlockSectionItem>
+                    
+                    <!-- This is used to enable Inline edit on Section1 -->
+                    <apex:inlineEditSupport event="ondblClick"
+                        disabled="{!screenFigure == 2}" />
+
+                </apex:pageBlockSection>
+
+                <apex:pageBlockButtons >
+
+
+                    <apex:commandButton id="cancelButton" value="Cancel"
+                        action="{!cancelAction}" rendered="{!screenFigure == 2}"
+                        reRender="mainPanel" status="statusWaiting" />
+                        
+                    <apex:commandButton id="saveButton" value="Save"
+                        action="{!saveAction}" rendered="{!screenFigure == 1}"
+                        reRender="mainPanel" status="statusWaiting" />
+                        
+                    <apex:commandButton id="rebalanceButton" value="Rebalance"
+                        action="{!rebalanceAction}" rendered="{!screenFigure == 1}"
+                        reRender="mainPanel" status="statusWaiting" />
+                        
+                    <apex:commandButton id="rebalanceNowButton" value="Rebalance Now"
+                        action="{!rebalanceNowAction}" rendered="{!screenFigure == 2}"
+                        reRender="mainPanel" status="statusWaiting" />
+
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+            <!-- End : Screen 1 (Section1 - a) -->
+
+            <!-- Start : Screen 2(Section2)  -->
+            <apex:pageBlock rendered="{!screenFigure == 2}"
+                title="{!$Label.INVESTMENT_ACCOUNT_REBALANCE_TITLE}">
+                <apex:pageBlockSection columns="1">
+
+                    <!-- This page block table show investment's in pagination form  -->
+                    <apex:pageBlockTable value="{!InvestmentChunkList}" var="inv">
+                        <apex:column headerValue="{!$ObjectType.Investment__c.fields.Active__c.label}">
+                            <apex:inputCheckbox value="{!invWrapMap[inv.Id].active}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="{!$ObjectType.Investment__c.fields.Auto_Invest_Percent__c.label}">
+                            <apex:input type="text"
+                                value="{!invWrapMap[inv.Id].autoInvestPercent}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="{!$ObjectType.Investment__c.fields.Name.label}">
+                            <apex:outputField value="{!inv.Name}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="{!$ObjectType.Investment__c.fields.Trading_Symbol__c.label}">
+                            <apex:outputField value="{!inv.Trading_Symbol__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="{!$ObjectType.Investment__c.fields.Value__c.label}">
+                            <apex:outputField value="{!inv.Value__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="{!$ObjectType.Investment__c.fields.Shares__c.label}">
+                            <apex:outputField value="{!inv.Shares__c}" />
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    
+                    <apex:outputPanel >
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 25%;" align="left">
+                                    <apex:outputText >
+                                        Page {!con.pageNumber} of {!CEILING(con.ResultSize / pageSize)}
+                                    </apex:outputText></td>
+                                <td style="width: 50%;" align="center"><apex:outputText value="First" rendered="{!!con.hasPrevious}" /> <apex:commandLink value="<First" action="{!first}" rendered="{!con.hasPrevious}"
+                                        reRender="mainPanel" status="statusWaiting" /> | <apex:outputText value="Previous" rendered="{!!con.hasPrevious}" /> <apex:commandLink value="Previous" action="{!previous}" reRender="mainPanel"
+                                        rendered="{!con.hasPrevious}" status="statusWaiting" /> | <apex:outputText value="Next" rendered="{!!con.hasNext}" /> <apex:commandLink value="Next" action="{!next}" reRender="mainPanel"
+                                        rendered="{!con.hasNext}" status="statusWaiting" /> | <apex:outputText value="Last" rendered="{!!con.hasNext}" /> <apex:commandLink value="Last>" action="{!last}" reRender="mainPanel"
+                                        rendered="{!con.hasNext}" status="statusWaiting" /></td>
+                                <td style="width: 25%;" align="right">
+                                    <apex:outputText >
+                                        Record {!(con.pageNumber * pageSize)+1-pageSize}-{!IF((con.pageNumber * pageSize) > con.ResultSize, con.ResultSize,
+                                            (con.pageNumber * pageSize))} of {!con.ResultSize}
+                                    </apex:outputText>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </apex:outputPanel>
+
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            <!-- ENd : Screen 2(Section2)  -->
+
+        </apex:form>
+
+        <!-- Start : Screen 1 (Section1 - b) -->
+        <!-- Related list for Investments, it is visible on screen1 -->
+        <apex:relatedList list="Investments__r"
+            rendered="{!screenFigure == 1}" />
+
+        <!-- Related list for Transactions, it is visible on screen1 -->
+        <apex:relatedList list="Transactions__r"
+            rendered="{!screenFigure == 1}" />
+        <!-- End : Screen 1 (Section1 - b) -->
+
+        <!--
+            This is a custom component which contains loading screen functionality, 
+            This is used on both the screens 
+        -->
+        <c:WaitingComponent />
+
+    </apex:outputPanel>
+    <!-- END - Main Panel -->
+
+
+
+</apex:page>

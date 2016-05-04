@@ -1,0 +1,529 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "TransactionsTriggerHelper", 
+    "tableDeclaration": {
+        "type": "TransactionsTriggerHelper", 
+        "modifiers": [
+            "public"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 9
+        }, 
+        "name": "TransactionsTriggerHelper"
+    }, 
+    "key": "01p2100000009KLAAY", 
+    "variables": [
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 69, 
+                "line": 12
+            }, 
+            "name": "transactionList"
+        }, 
+        {
+            "type": "Set", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 16
+            }, 
+            "name": "invIdSet"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 19
+            }, 
+            "name": "investmentMap"
+        }, 
+        {
+            "type": "Transaction__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 22
+            }, 
+            "name": "trans"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 84, 
+                "line": 48
+            }, 
+            "name": "transactionList"
+        }, 
+        {
+            "type": "Set", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 52
+            }, 
+            "name": "accountIdSet"
+        }, 
+        {
+            "type": "Transaction__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 55
+            }, 
+            "name": "trans"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 34, 
+                "line": 61
+            }, 
+            "name": "investmentAccMap"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 68, 
+                "line": 87
+            }, 
+            "name": "transactionList"
+        }, 
+        {
+            "type": "Investment__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 90
+            }, 
+            "name": "inv"
+        }, 
+        {
+            "type": "Investment_Account__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 92
+            }, 
+            "name": "invAcc"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 94
+            }, 
+            "name": "investmentMap"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 34, 
+                "line": 96
+            }, 
+            "name": "investmentAccMap"
+        }, 
+        {
+            "type": "Transaction__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 102
+            }, 
+            "name": "trans"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 186
+            }, 
+            "name": "investmentResults"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 188
+            }, 
+            "name": "i"
+        }, 
+        {
+            "type": "SaveResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 189
+            }, 
+            "name": "result"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 199
+            }, 
+            "name": "investmentAccResults"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 202
+            }, 
+            "name": "i"
+        }, 
+        {
+            "type": "SaveResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 203
+            }, 
+            "name": "result"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 63, 
+                "line": 213
+            }, 
+            "name": "transactionList"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 216
+            }, 
+            "name": "rebalanceAmountMap"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 218
+            }, 
+            "name": "transList"
+        }, 
+        {
+            "type": "Investment__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 220
+            }, 
+            "name": "inv"
+        }, 
+        {
+            "type": "Investment_Account__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 221
+            }, 
+            "name": "invAcc"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 223
+            }, 
+            "name": "totalAccountValue"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 224
+            }, 
+            "name": "targetCashValue"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 225
+            }, 
+            "name": "numberOfInvestments"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 226
+            }, 
+            "name": "rebalanceAmount"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 227
+            }, 
+            "name": "numberOfShares"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 34, 
+                "line": 230
+            }, 
+            "name": "investmentAccMap"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 10, 
+                "line": 234
+            }, 
+            "name": "invAccId"
+        }, 
+        {
+            "type": "Investment__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 237
+            }, 
+            "name": "invs"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 10, 
+                "line": 256
+            }, 
+            "name": "invAccId"
+        }, 
+        {
+            "type": "Investment__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 257
+            }, 
+            "name": "invs"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 50, 
+                "line": 303
+            }, 
+            "name": "type"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 63, 
+                "line": 303
+            }, 
+            "name": "invAccId"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 304
+            }, 
+            "name": "invId"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 46, 
+                "line": 304
+            }, 
+            "name": "shares"
+        }
+    ], 
+    "id": "01p2100000009KLAAY", 
+    "methods": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getInvestmentMap", 
+            "parameters": [
+                {
+                    "type": "LIST", 
+                    "name": "transactionList"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 12
+            }, 
+            "returnType": "Map", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getInvestmentAccountMap", 
+            "parameters": [
+                {
+                    "type": "LIST", 
+                    "name": "transactionList"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 39, 
+                "line": 48
+            }, 
+            "returnType": "Map", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "updateParentInvestmentAndAccount", 
+            "parameters": [
+                {
+                    "type": "LIST", 
+                    "name": "transactionList"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 87
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "rebalanceInvestmentAccount", 
+            "parameters": [
+                {
+                    "type": "LIST", 
+                    "name": "transactionList"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 213
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "createTransaction", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "type"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "invAccId"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "invId"
+                }, 
+                {
+                    "type": "Decimal", 
+                    "name": "shares"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 303
+            }, 
+            "returnType": "Transaction__c", 
+            "type": null
+        }
+    ]
+}

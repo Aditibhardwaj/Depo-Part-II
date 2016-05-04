@@ -1,0 +1,281 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "invAccWrapper", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 35, 
+                "line": 2
+            }, 
+            "type": "InvestmentAccountWrapper"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "investmentValue", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 3
+            }, 
+            "type": "Decimal"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "totalAccountValue", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 4
+            }, 
+            "type": "Decimal"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [
+        {
+            "properties": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "invAcc", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 34, 
+                        "line": 21
+                    }, 
+                    "type": "Investment_Account__c"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "investmentValue", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 20, 
+                        "line": 22
+                    }, 
+                    "type": "Decimal"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "totalAccountValue", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 20, 
+                        "line": 23
+                    }, 
+                    "type": "Decimal"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "InvestmentAccountWrapper", 
+                    "parameters": [
+                        {
+                            "type": "Investment_Account__c", 
+                            "name": "invAcc"
+                        }, 
+                        {
+                            "type": "Decimal", 
+                            "name": "investmentValue"
+                        }, 
+                        {
+                            "type": "Decimal", 
+                            "name": "totalAccountValue"
+                        }
+                    ], 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 12, 
+                        "line": 24
+                    }, 
+                    "type": null
+                }
+            ], 
+            "namespace": null, 
+            "name": "InvestmentAccountWrapper", 
+            "tableDeclaration": {
+                "type": "InvestmentAccountWrapper", 
+                "modifiers": [], 
+                "references": [], 
+                "location": {
+                    "column": 9, 
+                    "line": 19
+                }, 
+                "name": "InvestmentAccountWrapper"
+            }, 
+            "key": null, 
+            "variables": [
+                {
+                    "type": "Investment_Account__c", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 59, 
+                        "line": 24
+                    }, 
+                    "name": "invAcc"
+                }, 
+                {
+                    "type": "Decimal", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 45, 
+                        "line": 25
+                    }, 
+                    "name": "investmentValue"
+                }, 
+                {
+                    "type": "Decimal", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 45, 
+                        "line": 26
+                    }, 
+                    "name": "totalAccountValue"
+                }
+            ], 
+            "id": null, 
+            "methods": []
+        }
+    ], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "InvestmentAccountDetailPageController", 
+            "parameters": [
+                {
+                    "type": "StandardController", 
+                    "name": "controller"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 10, 
+                "line": 6
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "InvestmentAccountDetailPageController", 
+    "tableDeclaration": {
+        "type": "InvestmentAccountDetailPageController", 
+        "modifiers": [
+            "public", 
+            "with sharing"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "InvestmentAccountDetailPageController"
+    }, 
+    "key": "01p2100000009KfAAI", 
+    "variables": [
+        {
+            "type": "StandardController", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 77, 
+                "line": 6
+            }, 
+            "name": "controller"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 46, 
+                "line": 37
+            }, 
+            "name": "invAccid"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 13, 
+                "line": 38
+            }, 
+            "name": "cashValue"
+        }, 
+        {
+            "type": "Investment_Account__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 41
+            }, 
+            "name": "acc"
+        }, 
+        {
+            "type": "Investment__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 56
+            }, 
+            "name": "invs"
+        }
+    ], 
+    "id": "01p2100000009KfAAI", 
+    "methods": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "calculateReblanceAmount", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "invAccid"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 37
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

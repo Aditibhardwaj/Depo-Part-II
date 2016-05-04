@@ -1,0 +1,116 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "static", 
+                "public", 
+                "final"
+            ], 
+            "name": "BUY", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 29, 
+                "line": 11
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public", 
+                "final"
+            ], 
+            "name": "DEPOSIT", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 12
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public", 
+                "final"
+            ], 
+            "name": "REBALANCE", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 13
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public", 
+                "final"
+            ], 
+            "name": "SELL", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 14
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public", 
+                "final"
+            ], 
+            "name": "WITHDRAW", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 15
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public", 
+                "final"
+            ], 
+            "name": "TRANSACTION_TYPE", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 35, 
+                "line": 16
+            }, 
+            "type": "Set"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "SMIConstants", 
+    "tableDeclaration": {
+        "type": "SMIConstants", 
+        "modifiers": [
+            "public"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 9
+        }, 
+        "name": "SMIConstants"
+    }, 
+    "key": "01p2100000009KVAAY", 
+    "variables": [], 
+    "id": "01p2100000009KVAAY", 
+    "methods": []
+}

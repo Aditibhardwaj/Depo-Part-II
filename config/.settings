@@ -1,0 +1,19 @@
+{
+    "username": "candidate@653818advdev.com.dev", 
+    "environment": "sandbox", 
+    "project_name": "SMI_DEV", 
+    "workspace": "D:\\Development\\MavensMateFinal WS", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "2SL5WQPEIFRMBOXFG18HY1IUTW381WFK", 
+    "metadata_container": "1dc360000004RwsAAE", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "StaticResource", 
+        "CustomObject", 
+        "Profile"
+    ]
+}
